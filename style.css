@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 
 :root {
-  --primary: #eeeeee;
-  --secondary: #2192ff;
-  --grey: #808080;
+  --primary: #f0f0f0;
+  --secondary: #007bff;
+  --grey: #dcdcdc;
+  --dark-grey: #808080;
   --white: #ffffff;
   --black: #222222;
 }
@@ -15,62 +16,173 @@
   font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--primary);
+}
 
-    display:flex;
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.progress-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--grey);
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: var(--secondary);
+  z-index: 1;
+  transition: width 0.4s ease-in-out;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step .fa-solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 3px solid var(--grey);
+  color: var(--grey);
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.progress-step .fa-solid.active {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  transform: scale(1.2);
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+.progress-step span {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+}
+
+.progress-step .fa-solid.active + span {
+  font-weight: 500;
+  color: var(--black);
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-container .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-container .btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-container .btn.disabled {
+  background-color: var(--grey);
+  cursor: not-allowed;
+}
+
+
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .progress-step .fa-solid {
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: var(--primary);
-}
-
-.wrapper{
-    display: flex;
-    align-items:center;
-    flex-direction:column;
-    width:700px;
-}
-
-.progress-container{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* width: 100%; */
-
-}
-
-.progress-container::after{
-    content: "";
-    position: absolute;
-    height: 3px;
-    width:90%;
-    top:31%;
-    left:1rem;
-    background-color: var(--grey);
-    z-index:0;
-}
-
-.progress{
-    position:absolute;
-    left:0;
-    height: 3px;
-    top:33%;
-    width:25%;
-    transform:translateY(-50%);
-    background-color: var(--secondary);
-    z-index:1;
-}
-
-.progress-step{
-    display: flex;
-    align-items:center;
-    flex-direction: column;
-    font-weight: 500;
-    color: var(--black);
-    z-index:2;
-}
-
-.progress-step .fa-solid{
-    
-}
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 3px solid var(--grey);
+    color: var(--grey);
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .progress-step span {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+  }
+  
+  .progress-step small {
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--grey);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .progress-step .fa-solid.active {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    transform: scale(1.2);
+    animation: bounce 0.5s ease-in-out;
+  }
+  
+  .progress-step .fa-solid.active + span + small {
+    color: var(--secondary);
+  }
+  

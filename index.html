@@ -13,42 +13,44 @@
   </head>
   <body>
     <div class="wrapper">
-        <div class="progress-container">
-            <div class="progress" id="progress">
-                <div class="progress-step">
-                    <i class="fa-solid fa-cart-shopping"> 
-                    </i> Items
-                </div>
-                
-                <div class="progress-step">
-                    <i class="fa-solid fa-address-book"> 
-                    </i> Address
-                </div>
-                <div class="progress-step">
-                    <i class="fa-solid fa-credit-card"> 
-                    </i> Payment
-                </div>
-                <div class="progress-step">
-                    <i class="fa-solid fa-flag"> 
-                    </i> Place Order
-                </div>
-                <div class="progress-step">
-                    <i class="fa-solid fa-truck"> 
-                    </i> Shipment
-                </div>
-                <div class="progress-step">
-                    <i class="fa-solid fa-car"> 
-                    </i> Delivery
-                </div>
-            </div>
+      <div class="progress-container">
+        <div class="progress" id="progress"></div>
+        <div class="progress-step">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Items</span>
+          <small class="status">Pending</small>
         </div>
-        
-        <div class="btn-container">
-            <button class="btn" id="prev">Previous</button>
-            <button class="btn" id="prev">Next</button>
-
+        <div class="progress-step">
+          <i class="fa-solid fa-address-book"></i>
+          <span>Address</span>
+          <small class="status">Pending</small>
         </div>
+        <div class="progress-step">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Payment</span>
+          <small class="status">Pending</small>
+        </div>
+        <div class="progress-step">
+          <i class="fa-solid fa-flag"></i>
+          <span>Place Order</span>
+          <small class="status">Pending</small>
+        </div>
+        <div class="progress-step">
+          <i class="fa-solid fa-truck"></i>
+          <span>Shipment</span>
+          <small class="status">Pending</small>
+        </div>
+        <div class="progress-step">
+          <i class="fa-solid fa-car"></i>
+          <span>Delivery</span>
+          <small class="status">Pending</small>
+        </div>
+      </div>
 
+      <div class="btn-container">
+        <button class="btn" id="prev" onclick="prev()">Previous</button>
+        <button class="btn" id="next" onclick="next()">Next</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
