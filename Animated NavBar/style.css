@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e1e; 
+  }
+  
+  nav {
+    position: relative;
+    width: 600px;
+    height: 80px;
+    background: #51cf6c; 
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  
+  nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 110px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+  
+  nav span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #fa0101, #e7fc00);
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+  }
+  
+  nav a:hover ~ span {
+    width: 130px; 
+    transform: translateX(calc(var(--hover-offset)));
+  }
+  
+  nav a:nth-child(1):hover ~ span {
+    --hover-offset: 10px;
+  }
+  
+  nav a:nth-child(2):hover ~ span {
+    --hover-offset: 120px;
+  }
+  
+  nav a:nth-child(3):hover ~ span {
+    --hover-offset: 235px;
+  }
+  
+  nav a:nth-child(4):hover ~ span {
+    --hover-offset: 345px;
+  }
+  
+  nav a:nth-child(5):hover ~ span {
+    --hover-offset: 460px;
+  }
+  
+  lord-icon {
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  nav a:hover lord-icon {
+    transform: scale(1.1);
+  }
+  
